@@ -1,0 +1,326 @@
+/* style.css - Kuchli, responsiv va animatsiyalar bilan to'ldirilgan dizayn */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: fadeIn 1s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  text-align: center;
+  padding: 30px 20px 20px;
+  font-size: 2.5rem;
+  color: #4a00e0;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 2s infinite alternate;
+}
+
+#menu {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+#menu button {
+  padding: 18px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(45deg, #8e2de2, #4a00e0);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(142, 45, 226, 0.3);
+  transform: translateY(0);
+}
+
+#menu button:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(142, 45, 226, 0.5);
+}
+
+#menu button:active {
+  transform: translateY(2px) scale(0.98);
+}
+
+#menu button:nth-child(odd) {
+  background: linear-gradient(45deg, #11998e, #38ef7d);
+  box-shadow: 0 8px 20px rgba(17, 153, 142, 0.3);
+}
+
+#menu button:nth-child(odd):hover {
+  box-shadow: 0 15px 30px rgba(17, 153, 142, 0.5);
+}
+
+#menu button:last-child {
+  grid-column: span 2;
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  font-size: 1.3rem;
+  animation: bounce 2s infinite;
+}
+
+#quiz {
+  padding: 30px;
+  animation: slideIn 0.8s ease-out;
+}
+
+#counter {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #8e2de2;
+  font-weight: bold;
+}
+
+#question {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease;
+}
+
+#options {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+#options button {
+  padding: 18px;
+  font-size: 1.1rem;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  text-align: left;
+}
+
+#options button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(142, 45, 226, 0.2);
+  border-color: #8e2de2;
+}
+
+#options button.correct {
+  background: #4caf50 !important;
+  color: white;
+  border-color: #388e3c;
+  animation: correctAnswer 0.6s ease;
+}
+
+#options button.wrong {
+  background: #f44336 !important;
+  color: white;
+  border-color: #d32f2f;
+  animation: wrongAnswer 0.6s ease;
+}
+
+#info {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.1rem;
+  color: #666;
+  min-height: 30px;
+}
+
+#quiz > button {
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+#quiz > button:first-of-type {
+  background: linear-gradient(45deg, #4a00e0, #8e2de2);
+  color: white;
+  box-shadow: 0 8px 20px rgba(142, 45, 226, 0.3);
+}
+
+#quiz > button:first-of-type:hover {
+  transform: scale(1.1);
+}
+
+#quiz > button:last-of-type {
+  background: linear-gradient(45deg, #ff512f, #dd2476);
+  color: white;
+  box-shadow: 0 8px 20px rgba(221, 36, 118, 0.3);
+}
+
+#quiz > button:last-of-type:hover {
+  transform: scale(1.1);
+}
+
+#result {
+  padding: 40px;
+  text-align: center;
+  animation: zoomIn 1s ease;
+}
+
+#result h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4a00e0;
+}
+
+#result p {
+  font-size: 1.4rem;
+  margin: 15px 0;
+}
+
+#result button {
+  padding: 15px 40px;
+  margin-top: 30px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #11998e, #38ef7d);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(17, 153, 142, 0.3);
+  transition: all 0.3s ease;
+}
+
+#result button:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Telegram muallif linki */
+a.good {
+  display: block;
+  margin: 20px auto 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4a00e0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: fit-content;
+  padding: 8px 16px;
+  /* border-radius: 20px; */
+  /* background: rgba(74, 0, 224, 0.08); */
+  /* padding-bottom: 20px; */
+}
+
+a.good:hover {
+  color: #ffffff;   
+  transform: translateY(-3px) scale(1.05);
+}
+
+a.good:active {
+  transform: scale(0.95);
+}
+
+
+/* Barcha telefonlar uchun responsiv */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  #menu {
+    grid-template-columns: 1fr;
+  }
+  
+  #menu button:last-child {
+    grid-column: span 1;
+  }
+  
+  #question {
+    font-size: 1.2rem;
+    padding: 20px;
+  }
+  
+  #options button {
+    font-size: 1rem;
+    padding: 15px;
+  }
+  
+  #quiz {
+    padding: 20px;
+  }
+}
+
+/* Ko'plab animatsiyalar */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes correctAnswer {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); background: #4caf50; }
+  100% { transform: scale(1); }
+}
+
+@keyframes wrongAnswer {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1) rotate(5deg); background: #f44336; }
+  100% { transform: scale(1); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}

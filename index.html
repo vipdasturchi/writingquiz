@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>📚 Quiz Test</h1>
+
+  <!-- BLOCK TANLASH -->
+  <div id="menu">
+    <button onclick="startBlock(1)">1-Block (1–50)</button>
+    <button onclick="startBlock(2)">2-Block (51–100)</button>
+    <button onclick="startBlock(3)">3-Block (101–150)</button>
+    <button onclick="startAll()">📘 Hammasi</button>
+    <button onclick="startRandom()">🎲 Random (50)</button>
+  </div>
+  <!-- QUIZ -->
+    <a class="good" href="https://t.me/yaxshibola" target="_blank" rel="noopener">by: @yaxshibola</a>
+  <div id="quiz" class="hidden">
+    <div id="counter"></div>
+    <div id="question"></div>
+    <div id="options"></div>
+    <div id="info"></div>
+
+    <button onclick="nextQuestion()">➡️ Keyingi</button>
+    <button onclick="finishQuiz()">⛔ Tugatish</button>
+  </div>
+
+  <!-- NATIJA -->
+  <div id="result" class="hidden"></div>
+
+</div>
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
